@@ -9,6 +9,11 @@
 
 	<name>account-service</name>
 
+	<properties>
+		<jarDirectory>${project.build.directory}</jarDirectory>
+	</properties>
+
+
 	<parent>
 		<groupId>com.piggymetrics</groupId>
 		<artifactId>piggymetrics</artifactId>
@@ -110,6 +115,14 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<finalName>account-service</finalName>
+					<outputDirectory>${jarDirectory}</outputDirectory>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<outputDirectory>${jarDirectory}</outputDirectory>
 				</configuration>
 			</plugin>
 			<plugin>
